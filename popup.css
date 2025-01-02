@@ -4,8 +4,23 @@ body {
     padding: 10px;
   }
 
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
 h1 {
     font-size: 18px;
+    margin-left: 55px;
+}
+
+img {
+    position: absolute;
+    top: 25px;
+    width: 15%;
+    height: auto;
 }
 
 textarea {
