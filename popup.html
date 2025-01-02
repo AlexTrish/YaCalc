@@ -3,36 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <title>Калькулятор для админки</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        width: 300px;
-        padding: 10px;
-      }
-      h1 {
-        font-size: 18px;
-      }
-      textarea {
-        width: 100%;
-        height: 150px;
-        margin-bottom: 10px;
-      }
-      .data {
-        margin-top: 10px;
-      }
-      .result {
-        margin-top: 10px;
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="popup.css">
   </head>
   <body>
     <h1>Калькулятор для админки</h1>
-    <textarea id="jsonInput" placeholder="Вставьте весь ответ API сюда..."></textarea>
-    <button id="filterButton">Отфильтровать данные</button>
-    
+    <textarea id="jsonInput" placeholder="Вставьте весь JSON-ответ..."></textarea>
+    <div class="btn">
+      <button id="filterBtn">Отфильтровать данные</button>
+      <button id="callBtn">Скопировать готовый ответ</button>
+    </div>
     <div class="data">
-      <p><strong>Сумма заказа ОЦ:</strong> <span id="totalCost">Загрузка...</span> руб</p>
+      <p><strong>Сумма заказа ОЦ:</strong> <span id="totalCost">Загрузка...</span></p>
       <p><strong>ID ЭТН:</strong> <span id="claimId">Загрузка...</span></p>
       <p><strong>ID заказа:</strong> <span id="orderId">Загрузка...</span></p>
     </div>

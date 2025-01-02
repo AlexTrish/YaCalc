@@ -1,8 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Калькулятор для админки",
+  "name": "YaCalc",
   "version": "1.0",
-  "description": "Вставьте весь JSON-ответ в поле, и расширение отфильтрует нужные данные.",
+  "description": "Калькулятор для поддержки Яндекс Доставки. Разработал - @AlexTrish.",
+  "icons": {
+    "16": "YaCalc_Logo.png",
+    "48": "YaCalc_Logo.png",
+    "128": "YaCalc_Logo.png"
+  },
   "permissions": ["storage"],
   "background": {
     "service_worker": "background.js"

@@ -1,10 +1,10 @@
-document.getElementById("filterButton").addEventListener("click", () => {
+document.getElementById("filterBtn").addEventListener("click", () => {
   const input = document.getElementById("jsonInput").value;
 
   try {
     const data = JSON.parse(input);
     const claim = data.claim;
-    const routePoints = claim?.route_points || [];
+    const routePoints = Array.isArray(claim?.route_points) ? claim.route_points.slice(-1) : [];
     const items = claim?.items || [];
 
     if (!claim || !items.length || !routePoints.length) {
@@ -17,10 +17,11 @@ document.getElementById("filterButton").addEventListener("click", () => {
       return sum + cost * quantity;
     }, 0);
 
-    document.getElementById("totalCost").textContent = totalCost.toFixed(2);
+    document.getElementById("totalCost").textContent = totalCost.toFixed(2) + "\u00A0руб";
     document.getElementById("claimId").textContent = claim.id;
     document.getElementById("orderId").textContent = routePoints
       .map(point => point.external_order_id)
+      .join(", ");
   } catch (error) {
     alert("Ошибка обработки JSON: " + error.message);
   }
