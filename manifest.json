@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Калькулятор для админки",
+  "version": "1.0",
+  "description": "Вставьте весь JSON-ответ в поле, и расширение отфильтрует нужные данные.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
