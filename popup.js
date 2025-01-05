@@ -4,7 +4,7 @@ document.getElementById("filterBtn").addEventListener("click", () => {
   try {
     const data = JSON.parse(input);
     const claim = data.claim;
-    const routePoints = Array.isArray(claim?.route_points) ? claim.route_points.slice(-1) : [];
+    const routePoints = claim?.route_points || [];
     const items = claim?.items || [];
 
     if (!claim || !items.length || !routePoints.length) {
