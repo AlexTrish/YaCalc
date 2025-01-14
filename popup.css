@@ -34,7 +34,7 @@ h1 {
 }
 
 .red-text {
-    color: red;
+    color: #00db8b;
 }
 
 textarea {
@@ -78,7 +78,7 @@ button {
 
     color: rgb(40, 40, 40);
     font-weight: 600;
-    background-color: #e7c500;
+    background-color: #00db8b;
 
     -o-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -89,7 +89,7 @@ button {
 }
 
 button:hover {
-    background-color: #cfb000;
+    background-color: #00cc81;
     -o-transition: 0.25s;
     -webkit-transition: 0.25s;
     -moz-transition: 0.25s;
@@ -98,7 +98,7 @@ button:hover {
 }
 
 button:active {
-    background-color: #b99e00;
+    background-color: #00ac6d;
     -o-transform: scale(0.99);
     -webkit-transform: scale(0.99);
     -moz-transform: scale(0.99);
