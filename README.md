@@ -11,7 +11,7 @@
 
 *Расширение установлено и готово к эксплуатации, для дальнейшей работы, файл с раширением не рекомендуется к удалению.*
 
-
+---
 
 ## Instructions for installing the extension (*Chrome/Yandex Browser*):
 + Install the file with the extension and unzip it.
