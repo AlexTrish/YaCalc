@@ -12,6 +12,7 @@
 *Расширение установлено и готово к эксплуатации, для дальнейшей работы, файл с раширением не рекомендуется к удалению.*
 
 ---
+*This extension was developed by* **@AlexTrish** *specifically to simplify and speed up workflows. Its functionality is aimed at quick counting.*
 
 ## Instructions for installing the extension (*Chrome/Yandex Browser*):
 + Install the file with the extension and unzip it.
