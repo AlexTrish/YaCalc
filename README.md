@@ -23,3 +23,5 @@
 + In the upper left corner, click the ***Download unpacked extension*** button and select the file you unpacked earlier.
 
 *The extension is installed and ready for use, for further work, the file with the extension is not recommended for deletion.*
+
+***YaCalc extension does not violate NDA, the data for the calculator is provided by the user for the duration of one calculation, after closing the extension window, all data is immediately deleted. Also, in order to keep the data safe, all calculations are performed locally in the user's browser.***
