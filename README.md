@@ -11,6 +11,8 @@
 
 *Расширение установлено и готово к эксплуатации, для дальнейшей работы, файл с раширением не рекомендуется к удалению.*
 
+*Данный калькулятор не нарушает NDA, все вычисления происходят лишь в браузере пользователя.*
+
 ---
 *This extension was developed by* **@AlexTrish** *specifically to simplify and speed up workflows. Its functionality is aimed at quick counting.*
 
