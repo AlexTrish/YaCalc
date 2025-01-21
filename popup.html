@@ -7,19 +7,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="crypto.js"></script>
   </head>
   <body>
     <h1><span class="red-text">Ya</span>Calc — Помощник для помощников</h1>
     <textarea id="jsonInput" placeholder="Вставьте весь JSON-ответ..."></textarea>
     <div class="btn">
       <button id="filterBtn">Отфильтровать данные</button>
-      <button id="callBtn">Скопировать готовый ответ</button>
+      <button id="copyBtn">Скопировать готовый ответ</button>
     </div>
     <div class="data">
       <p><strong>Сумма заказа ОЦ:</strong> <span id="totalCost">Загрузка...</span></p>
       <p><strong>ID ЭТН:</strong> <span id="claimId">Загрузка...</span></p>
       <p><strong>ID заказа:</strong> <span id="orderId">Загрузка...</span></p>
     </div>
+    
+    <!-- Добавим текстовое поле для копирования -->
+    <textarea id="copyText" readonly></textarea>
+
+    <!-- Уведомление -->
+    <div id="copyNotification">Текст скопирован в буфер обмена!</div>
 
     <script src="popup.js"></script>
   </body>
