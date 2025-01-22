@@ -6,28 +6,64 @@
     <link rel="stylesheet" href="popup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="crypto.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1><span class="red-text">Ya</span>Calc — Помощник для помощников</h1>
-    <textarea id="jsonInput" placeholder="Вставьте весь JSON-ответ..."></textarea>
-    <div class="btn">
-      <button id="filterBtn">Отфильтровать данные</button>
-      <button id="copyBtn">Скопировать готовый ответ</button>
+    <!-- Основное меню -->
+    <div id="mainMenu">
+      <h1><span class="red-text">Ya</span>Calc — Помощник для помощников</h1>
+      <textarea id="jsonInput" placeholder="Вставьте весь JSON-ответ..."></textarea>
+      <div class="btn">
+        <button id="filterBtn">Подсчитать</button>
+        <button id="copyBtn">Копировать</button>
+        <button id="settingsBtn">Настройки</button>
+      </div>
+      <div class="data">
+        <p><strong>Сумма заказа ОЦ:</strong> <span id="totalCost">Загрузка...</span></p>
+        <p><strong>ID ЭТН:</strong> <span id="claimId">Загрузка...</span></p>
+        <p><strong>ID заказа:</strong> <span id="orderId">Загрузка...</span></p>
+      </div>
     </div>
-    <div class="data">
-      <p><strong>Сумма заказа ОЦ:</strong> <span id="totalCost">Загрузка...</span></p>
-      <p><strong>ID ЭТН:</strong> <span id="claimId">Загрузка...</span></p>
-      <p><strong>ID заказа:</strong> <span id="orderId">Загрузка...</span></p>
+
+    <!-- Меню настроек -->
+    <div id="settingsMenu" style="display: none;">
+      <div class="settings">
+        <h1>Настройки</h1>
+        <button id="ChangeMacros">Редактировать мини-вывод</button>
+        <button id="ChangeTheme">Сменить тему</button>
+      </div>
+      <div class="btn">
+        <button id="backBtn">Назад</button>
+      </div>
     </div>
-    
-    <!-- Добавим текстовое поле для копирования -->
+
+    <!-- Менб редактирования макроса -->
+    <div id="editMacros" style="display: none; position: relative;">
+      <form action="">
+        <h1>Редактор Макроса</h1>
+        <div id="highlightedMacros"></div>
+        <textarea id="inputMacros" placeholder="Введите свой макрос..."></textarea>
+        <p class="info">Для подстановки данных используйте <br/>аргумент: <span class="teg">$<span class="data">Данные</span>$</span></p>
+        <p>Какие данные имеются: <span class="data">Дата</span>, <span class="data">ОЦ</span>, <span class="data">ЭТН</span>, <span class="data">IDO</span></p>
+      </form>
+      <div class="btn">
+        <button id="editBtn">Назад</button>
+        <button id="saveBtn">Сохранить</button>
+      </div>
+    </div>
+
+    <!-- Текстовое поле для копирования -->
     <textarea id="copyText" readonly></textarea>
 
     <!-- Уведомление -->
-    <div id="copyNotification">Текст скопирован в буфер обмена!</div>
-
-    <script src="popup.js"></script>
+    <div id="customAlert" class="alert alert-dismissible fade" role="alert">
+      <span id="alertMessage"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeAlertBtn">
+        &times;
+      </button>
+    </div>
   </body>
+  <script src="popup.js"></script>
+  <script src="crypto.js"></script>
+  <script src="btn-activity.js"></script>
 </html>

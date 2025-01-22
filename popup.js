@@ -38,22 +38,20 @@ document.getElementById("filterBtn").addEventListener("click", () => {
     const [day, month] = formattedDate.split('.');
     const shortDate = `${day}.${month}`;
 
-    const preparedText = `
-Заказ от ${shortDate}, отправитель - 
-Местное время (+00:00) 
-сумма заказа ОЦ - ${totalCost.toFixed(2)} руб
-Дубли - 
-Дубли в трекере - 
-№ договора - 
-id этн - ${claim.id}
-id order - ${orderIdText} 
-Батчинг/Мульти/Простой
-Звонки в админке - 
-По трекеру - 
+     function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
+      return "";
+    }
 
-Причина обращения - 
-Мини вывод -
-    `.trim();
+    const template = getCookie("textTemplate") || "";
+
+    const preparedText = template
+      .replace(/\$Дата\$/g, shortDate)
+      .replace(/\$ОЦ\$/g, `${totalCost.toFixed(2)} руб`)
+      .replace(/\$IDO\$/g, orderIdText)
+      .replace(/\$ЭТН\$/g, claim.id);
 
     const copyTextElement = document.getElementById("copyText");
     if (copyTextElement) {
@@ -61,7 +59,7 @@ id order - ${orderIdText}
     }
 
   } catch (error) {
-    alert("Ошибка обработки JSON: " + error.message);
+    dangerAlert("Ошибка обработки JSON: " + error.message);
   }
 });
 
@@ -71,25 +69,15 @@ document.getElementById("copyBtn").addEventListener("click", () => {
   if (textToCopy) {
     navigator.clipboard.writeText(textToCopy)
       .then(() => {
-        showCopyNotification();
+        successAlert("Текст скопирован успешно!")
       })
       .catch(err => {
-        console.error("Ошибка копирования: ", err);
-        alert("Не удалось скопировать текст.");
+        warningAlert("Не удалось скопировать текст.");
       });
   } else {
-    alert("Нет текста для копирования.");
+    infoAlert("Нет текста для копирования.");
   }
 });
-
-function showCopyNotification() {
-  const notification = document.getElementById("copyNotification");
-  notification.classList.add("show");
-
-  setTimeout(() => {
-    notification.classList.remove("show");
-  }, 3000);
-}
 
 function isValidJsonStructure(data) {
   return typeof data === 'object' &&

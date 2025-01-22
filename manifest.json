@@ -3,7 +3,7 @@
   "name": "YaCalc",
   "version": "1.0",
   "description": "Калькулятор для поддержки Яндекс Доставки. Разработал - @AlexTrish.",
-  "permissions": [],
+  "permissions": ["storage"],
   "icons": {
     "16": "YaCalc_Logo.png",
     "48": "YaCalc_Logo.png",

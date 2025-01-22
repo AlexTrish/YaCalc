@@ -1,3 +1,98 @@
+/* Reset and base styles  */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+
+
+
+
+
 ::-webkit-scrollbar {
     width: 4px;
     margin-right: 2px;
@@ -14,23 +109,17 @@
 }
 
 body {
-    font-family: "Roboto", serif;
+    font-family: "Roboto", serif !important;
     width: 300px;
-    padding: 10px 10px 10px 10px;
+    margin: 0px;
+    padding: 10px 20px;
     border: none;
   }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
 h1 {
-    margin: 0px 20px;
+    margin: 0px 20px 20px 20px;
     font-size: 22px;
-    margin-bottom: 18px;
+    font-weight: 600;
 }
 
 .red-text {
@@ -38,9 +127,10 @@ h1 {
 }
 
 textarea {
-    width: 100%;
+    width: 260px;
     height: 150px;
     border: #4d4d4d solid 1px;
+    padding: 5px;
     resize: none;
 
     margin-bottom: 10px;
@@ -49,36 +139,18 @@ textarea {
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     border-radius: 3px;
+    
+    font-family: "Roboto", serif;
+    font-size: 12px;
 }
 
 textarea:focus {
     outline-width: 0;
 }
 
-.data {
-    margin-top: 10px;
-}
-
-.result {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
 button {
-    width: 280px;
+    width: 260px;
     height: 30px;
-
-    color: rgb(40, 40, 40);
-    font-weight: 600;
-    background-color: #00db8b;
 
     -o-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -86,6 +158,12 @@ button {
     -ms-border-radius: 3px;
     border-radius: 3px;
     border: none;
+
+    color: rgb(40, 40, 40);
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #00db8b;
 }
 
 button:hover {
@@ -104,6 +182,7 @@ button:active {
     -moz-transform: scale(0.99);
     -ms-transform: scale(0.99);
     transform: scale(0.99);
+    
     -o-transition: 0.25s;
     -webkit-transition: 0.25s;
     -moz-transition: 0.25s;
@@ -111,28 +190,223 @@ button:active {
     transition: 0.25s;
 }
 
+
+/* Основное меню */
+#mainMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 460px;
+}
+
+#mainMenu .data {
+    width: 260px;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+#mainMenu .result {
+    margin: 10px;
+    font-weight: bold;
+}
+
+#mainMenu .btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+#mainMenu #settingsBtn {
+    grid-column: 1/span 2;
+}
+
+#mainMenu #filterBtn {
+    width: 125px;
+}
+
+#mainMenu #copyBtn {
+    width: 125px;
+}
+
+
+/* Меню настроек */
+#settingsMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+    height: 460px;
+}
+
+#settingsMenu .settings {
+    width: 260px;
+}
+
+#settingsMenu .settings button {
+    margin: 5px 0;
+}
+
+#settingsMenu .btn {
+    display: flex;
+    justify-content: center;
+    width: 260px;
+    margin-bottom: 5px;
+}
+
+#settingsMenu .btn button {
+    width: 100px;
+}
+
+
+/* Меню редактирования макроса */
+#editMacros {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+    height: 460px;
+}
+
+#editMacros form h1 {
+    font-size: 22px;
+}
+
+#editMacros #inputMacros {
+    width: 260px;
+    height: 150px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+#inputMacros::selection {
+    background-color: #d1d1d1d8;
+}
+
+#highlightedMacros {
+    position: absolute; 
+    width: 260px;
+    height: 150px;
+    border: 1px solid;
+    padding: 5px 5.5px;
+
+    top: 46.5px; 
+    left: 0px;
+
+    color: transparent;
+    white-space: pre-wrap;
+
+    font-size: 12px;
+    overflow: hidden; 
+    background: none; 
+    pointer-events: none; 
+    z-index: 0;
+}
+
+#editMacros form p {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#editMacros form .teg {
+    font-weight: 500;
+    color: #964f4f;
+}
+
+#editMacros form .data {
+    font-weight: 500;
+    color: #058001;
+}
+
+#editMacros .btn {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#editMacros .btn button {
+    width: 100px;
+}
+
+
+
+
+
+
+/* вспомогательные элементы */
 #copyText {
     display: none;
 }
 
-#copyNotification {
+.alert {
     display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 30px;
+    grid-template-rows: 0fr 1fr;
+    width: 280px;
+    padding: 7px 3px 14px 3px;
     border-radius: 5px;
-    font-size: 14px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-}
 
-#copyNotification.show {
-    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+  }
+  
+  .alert .close {
+    width: 10px;
+    height: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #636363;
+    cursor: pointer;
+
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  #alertMessage {
+    text-align: center;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .alert-success {
+    background-color: #28a746b3;
+    color: white;
+  }
+  
+  .alert-danger {
+    background-color: #dc3546b3;
+    color: white;
+  }
+  
+  .alert-warning {
+    background-color: #ffc107b3;
+    color: white;
+  }
+  
+  .alert-info {
+    background-color: #17a2b8b3;
+    color: white;
+  }
+  
+  .fade {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .fade.show {
     opacity: 1;
-}
+  }
