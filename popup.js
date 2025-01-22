@@ -42,8 +42,8 @@ document.getElementById("filterBtn").addEventListener("click", () => {
 Заказ от ${shortDate}, отправитель - 
 Местное время (+00:00) 
 сумма заказа ОЦ - ${totalCost.toFixed(2)} руб
-Дубли - нет 
-Дубли в трекере - нет
+Дубли - 
+Дубли в трекере - 
 № договора - 
 id этн - ${claim.id}
 id order - ${orderIdText} 
