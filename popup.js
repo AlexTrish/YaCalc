@@ -28,20 +28,25 @@ document.getElementById("filterBtn").addEventListener("click", () => {
       .map(point => point.external_order_id)
       .filter(id => id && id.trim() !== "")
       .join(", ");
-
-    const orderIdText = orderIds === "отсутствует" ? "отсутствует" : orderIds;
+    
+    const orderIdText = orderIds === "" ? "отсутствует" : orderIds;
     document.getElementById("orderId").textContent = orderIdText;
 
+    const createdDate = new Date(claim.created_ts);
+    const options = { timeZone: 'Europe/Moscow', year: 'numeric', month: '2-digit', day: '2-digit' };
+    const formattedDate = createdDate.toLocaleString('ru-RU', options).split(',')[0];
+    const [day, month] = formattedDate.split('.');
+    const shortDate = `${day}.${month}`;
+
     const preparedText = `
-Заказ от , отправитель - 
+Заказ от ${shortDate}, отправитель - 
 Местное время (+00:00) 
 сумма заказа ОЦ - ${totalCost.toFixed(2)} руб
-
 Дубли - нет 
 Дубли в трекере - нет
 № договора - 
 id этн - ${claim.id}
-id order - ${orderIds} 
+id order - ${orderIdText} 
 Батчинг/Мульти/Простой
 Звонки в админке - 
 По трекеру - 
