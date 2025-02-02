@@ -214,11 +214,15 @@ button:active {
 #mainMenu .btn {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
 }
 
 #mainMenu #settingsBtn {
+    grid-column: 1/span 2;
+}
+
+#mainMenu #fastResponse {
     grid-column: 1/span 2;
 }
 
