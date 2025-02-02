@@ -105,3 +105,21 @@ document.getElementById('settingsBtn').addEventListener('click', () => {
   })();
   
   
+
+
+  document.getElementById("fastResponse").addEventListener("click", () => {
+    const textToCopy = document.getElementById("copyTextFast").value;
+  
+    if (textToCopy) {
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          successAlert("Быстрый ответ скопирован!");
+        })
+        .catch(() => {
+          warningAlert("Не удалось скопировать текст.");
+        });
+    } else {
+      infoAlert("Нет данных для копирования.");
+    }
+  });
+  

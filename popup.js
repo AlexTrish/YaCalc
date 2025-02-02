@@ -32,6 +32,10 @@ document.getElementById("filterBtn").addEventListener("click", () => {
     const orderIdText = orderIds === "" ? "отсутствует" : orderIds;
     document.getElementById("orderId").textContent = orderIdText;
 
+    // Формирование текста для быстрого ответа
+    document.getElementById("copyTextFast").value = 
+      orderIdText === "отсутствует" ? claim.id : `${claim.id} ${orderIdText}`;
+
     const createdDate = new Date(claim.created_ts);
     const options = { timeZone: 'Europe/Moscow', year: 'numeric', month: '2-digit', day: '2-digit' };
     const formattedDate = createdDate.toLocaleString('ru-RU', options).split(',')[0];

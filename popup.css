@@ -342,6 +342,10 @@ button:active {
     display: none;
 }
 
+#copyTextfast {
+    display: none;
+}
+
 .alert {
     display: none;
     align-items: center;

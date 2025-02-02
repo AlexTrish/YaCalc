@@ -16,6 +16,8 @@
       <div class="btn">
         <button id="filterBtn">Подсчитать</button>
         <button id="copyBtn">Макрос</button>
+        <textarea id="copyText" readonly></textarea>
+        <button id="fastResponse">Быстрый ответ</button>
         <button id="settingsBtn">Настройки</button>
       </div>
       <div class="data">
@@ -53,7 +55,8 @@
     </div>
 
     <!-- Текстовое поле для копирования -->
-    <textarea id="copyText" readonly></textarea>
+    <textarea id="copyText" readonly style="display: none;"></textarea>
+    <textarea id="copyTextFast" readonly style="display: none;"></textarea>
 
     <!-- Уведомление -->
     <div id="customAlert" class="alert alert-dismissible fade" role="alert">
