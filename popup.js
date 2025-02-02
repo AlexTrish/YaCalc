@@ -24,10 +24,10 @@ document.getElementById("filterBtn").addEventListener("click", () => {
     document.getElementById("totalCost").textContent = `${totalCost.toFixed(2)}\u00A0руб`;
     document.getElementById("claimId").textContent = claim.id;
 
-    let orderIds = routePoints
+    let orderIds = [...new Set(routePoints
       .map(point => point.external_order_id)
-      .filter(id => id && id.trim() !== "")
-      .join(", ");
+      .filter(id => id && id.trim() !== ""))]
+      .join(", ");    
     
     const orderIdText = orderIds === "" ? "отсутствует" : orderIds;
     document.getElementById("orderId").textContent = orderIdText;
