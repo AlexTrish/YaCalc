@@ -62,7 +62,7 @@ The extension has been designed with all necessary precautions taken to protect 
 
 #### Instructions for installing the extension (*Chrome/Yandex Browser*):
 + Install the extension file and unzip it.
-+ Open the page $\color{#4a86e8}{\large\text{chrome://extensions}}$$ in **Google Chrome** or $\color{#4a86e8}{\large\text{browser://extensions/}}$ in **Yandex Browser**.
++ Open the page $\color{#4a86e8}{\large\text{chrome://extensions}}$ in **Google Chrome** or $\color{#4a86e8}{\large\text{browser://extensions/}}$ in **Yandex Browser**.
 + In the top right corner, activate developer mode.
 + In the upper left corner click on ***Download unzipped extension*** and select the file you unzipped earlier.
 
